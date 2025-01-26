@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import PostDetail from './pages/PostDetail';
 import CreateEditPost from './pages/CreateEditPost';
 
+
 function App() {
     return (
         <Router>
@@ -16,6 +17,7 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/post/:id" element={<PostDetail />} />
                         <Route path="/create" element={<CreateEditPost />} />
+                        <Route path="/edit/:id" element={<CreateEditPost />} />
                     </Routes>
                 </main>
                 <Footer />

@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 const CreateEditPost = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const existingPost = useSelector(state => state.posts.find(post => post.id === parseInt(id)));
 
   const [title, setTitle] = useState(existingPost ? existingPost.title : '');
@@ -19,7 +19,7 @@ const CreateEditPost = () => {
     } else {
       dispatch(addPost({ id: Date.now(), title, content }));
     }
-    navigate('/'); 
+    navigate('/'); // Redirect to Home after submission
   };
 
   return (
